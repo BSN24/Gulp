@@ -1,0 +1,51 @@
+{
+    "name": "gulp-template",
+    "version": "1.0.0",
+    "description": "Start kit for HTML/CSS/JS pages layout",
+    "main": "index.js",
+    "type": "module",
+    "scripts": {
+        "start": "gulp",
+        "build": "gulp build"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/BSN24/Gulp.git"
+    },
+    "author": "Sergey",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/BSN24/Gulp/issues"
+    },
+    "homepage": "https://github.com/BSN24/Gulp#readme",
+    "browserslist": [
+        "last 2 version",
+        "> 1%"
+    ],
+    "devDependencies": {
+        "@babel/core": "^7.20.12",
+        "@babel/preset-env": "^7.20.2",
+        "browser-sync": "^2.27.11",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^8.0.0",
+        "gulp-babel": "^8.0.0",
+        "gulp-cheerio": "^1.0.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-csscomb": "^3.1.0",
+        "gulp-csso": "^4.0.1",
+        "gulp-group-css-media-queries": "^1.2.2",
+        "gulp-html-prettify": "^0.0.1",
+        "gulp-if": "^3.0.0",
+        "gulp-notify": "^4.0.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-pug": "^5.0.0",
+        "gulp-rename": "^2.0.0",
+        "gulp-replace": "^1.1.4",
+        "gulp-sass": "^5.1.0",
+        "gulp-svg-sprite": "^2.0.1",
+        "gulp-svgmin": "^4.1.0",
+        "gulp-uglify": "^3.0.2",
+        "sass": "^1.57.1"
+    },
+    "dependencies": {}
+}

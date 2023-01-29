@@ -1,0 +1,13 @@
+-const nav = [{title: "Главная", href: "index.html"}, {title: "Проекты", href: "javascript:void(0);"}, {title: "О нас", href: "javascript:void(0);"}, {title: "Контакты", href: "javascript:void(0);"}]
+
+mixin main-nav()
+    ul.main-nav__list
+        each item in nav
+            if item.title === title
+                li.main-nav__item
+                    span.main-nav__link= item.title
+            else
+                li.main-nav__item
+                    a(href=item.href).main-nav__link= item.title
+
++main-nav(nav)

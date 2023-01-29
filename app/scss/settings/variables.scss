@@ -1,0 +1,14 @@
+//Media-queries
+$desktop: 1200px;
+$laptop: 992px;
+$tablets: 768px;
+$phone: 576px;
+
+:root {
+	--font-family-base: "Arial", sans-serif;
+	--font-weight-base: normal;
+	--font-size-base: 16px;
+	--line-height-base: 1.5;
+	--color-text-base: #000;
+	--colo-bg-base: #000;
+}

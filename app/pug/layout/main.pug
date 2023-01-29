@@ -1,0 +1,42 @@
+include ../mixins/mixins
+
+block var
+    -const title = "Главная"
+
+doctype html
+
+html(lang="ru").page
+  
+    head
+        meta(charset="UTF-8")
+        title= title
+        meta(name="viewport" content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        meta(name="description" content="")
+        meta(name="keywords" content="")
+        meta(name='format-detection', content='telephone=no')
+        meta(name='format-detection', content='date=no')
+        meta(name='format-detection', content='address=no')
+        meta(name='format-detection', content='email=no')
+        link(rel="stylesheet" href="css/style.css")
+  
+    body
+
+        .page__wrapper
+            header.main-header
+                .main-header__wrap.container
+
+            main.page__content
+
+                block content
+
+            footer.page__footer.main-footer
+                .main-footer__wrap.container
+
+
+        block modal
+
+        block script
+            script(src="js/vendors/jquery.min.js")
+            script(src="js/vendors.min.js")
+            script(src="js/main.js")

@@ -1,0 +1,15 @@
+-const breadcrumbsList = [{"href": "index.html", "title": "Главная"}, {"href": false, "title": "Каталог"}]
+
+mixin breadcrumbs(arr)
+    nav.breadcrumbs
+        .container.breadcrumbs__inner
+            ul.breadcrumbs__list
+                each val in arr
+                    if val.href !== false
+                        li.breadcrumbs__item
+                            a(href=val.href).breadcrumbs__link=val.title
+                    else
+                        li.breadcrumbs__item
+                            span.breadcrumbs__link=val.title
+
++breadcrumbs(breadcrumbsList)
