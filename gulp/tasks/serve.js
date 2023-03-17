@@ -1,9 +1,8 @@
-'use strict';
+import browserSync from "browser-sync";
 
-const gulp = require('gulp');
-
-gulp.task('serve', () => {
-    $.browserSync.init({
+export const serve = () => {
+    browserSync.init({
+        ui: false,
         server: './app'
     });
-});
+}

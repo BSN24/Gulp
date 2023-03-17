@@ -1,10 +1,9 @@
-'use strict';
-
 import gulp from 'gulp';
 import rename from 'gulp-rename';
 import uglify from 'gulp-uglify';
 import concat from 'gulp-concat';
 import babel from 'gulp-babel';
+import browserSync from "browser-sync";
 
 export const scripts = (done) => {
     gulp.src('./app/js/main.js')
@@ -20,12 +19,14 @@ export const scripts = (done) => {
             suffix: '.min'
         }))
         .pipe(gulp.dest('./app/js/'))
+        .pipe(browserSync.reload({stream: true}));
     done();
 }
 
 export const vendorsJs = (done) => {
     gulp.src(['./app/js/vendors/*.js', '!./app/js/vendors/jquery.min.js'])
         .pipe(concat('vendors.min.js',{newLine: ';'}))
-        .pipe(gulp.dest('./app/js'));
+        .pipe(gulp.dest('./app/js'))
+        .pipe(browserSync.reload({stream: true}));
     done();
 }
