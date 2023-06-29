@@ -1,16 +1,12 @@
 *,
 *:before,
-*:after {
-  -webkit-box-sizing: inherit;
+*:after {;
   box-sizing: inherit;
 }
 
-html {
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-}
-
 .page {
+  font-size: var(--font-size-base);
+
   min-width: 320px;
   min-height: 100%;
   overflow-x: hidden;
@@ -51,8 +47,8 @@ body {
 
 img {
   display: block;
-  max-width: 100%;
   height: auto;
+  max-width: 100%;
 }
 
 a {
@@ -61,10 +57,11 @@ a {
 }
 
 button {
+  padding: 0;
+  border: none;
+  outline: none;
   cursor: pointer;
   background-color: transparent;
-  outline: none;
-  border: none;
 }
 
 h1, h2, h3, h4, h5, h6, p {

@@ -1,0 +1,88 @@
+.check {
+	--checkbox-width: 20px;
+	--checkbox-height: 20px;
+	--checkbox-margin-right: 10px;
+	--checkbox-border-radius: 4px;
+	--checkbox-border: 1px solid #dcdcdc;
+
+	--checkbox-icon-width: 10px;
+	--checkbox-icon-height: 10px;
+
+	--checkbox-accent-color: #0d95e8;
+
+	position: relative;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	cursor: pointer;
+
+	&__input {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+	}
+
+	&__box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		flex: 0 0 auto;
+		max-width: var(--checkbox-width);
+		width: 100%;
+		height: var(--checkbox-height);
+		margin-right: var(--checkbox-margin-right);
+		border: var(--checkbox-border);
+		border-radius: var(--checkbox-border-radius);
+
+		transition: background-color 0.2s ease, border-color 0.2s ease;
+	}
+
+	&__icon {
+		width: var(--checkbox-icon-width);
+		height: var(--checkbox-icon-height);
+		stroke-width: 1px;
+
+		stroke: transparent;
+		fill: transparent;
+		transition: stroke 0.2s ease;
+	}
+
+	&__text {
+		font-size: 14px;
+		line-height: 1.43;
+		color: #5d5d5d;
+		user-select: none;
+		transition: color 0.2s ease;
+
+		a {
+			color: inherit;
+			text-decoration: underline;
+
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	&__input:focus-visible + &__box {
+		box-shadow: 0 0 5px 2px var(--checkbox-accent-color);
+	}
+
+	&__input:checked + &__box {
+		border-color: transparent;
+		background-color: var(--checkbox-accent-color);
+
+		.check__icon {
+			stroke: #fff;
+			fill: #fff;
+		}
+	}
+
+	&__input:checked ~ &__text {
+		color: #000;
+	}
+
+}

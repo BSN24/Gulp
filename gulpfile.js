@@ -1,17 +1,33 @@
 import gulp from 'gulp';
-import {style} from './gulp/tasks/style.js';
+import gulpIf from 'gulp-if';
 import {pug} from './gulp/tasks/pug.js';
-import {iconSprite} from './gulp/tasks/svg.js';
-import {scripts, vendorsJs} from './gulp/tasks/scripts.js';
+import {imgToWebp} from './gulp/tasks/img.js';
+import {clean} from './gulp/tasks/clean.js'
 import {serve} from './gulp/tasks/serve.js';
+import {style} from './gulp/tasks/style.js';
 import {watch} from './gulp/tasks/watch.js';
+import {iconSprite} from './gulp/tasks/svg.js';
+import {scripts} from './gulp/tasks/scripts.js';
+import {copyFonts, copyComponentsJS, copyMedia} from './gulp/tasks/copy.js';
 
-global.dev = false;
+import yargs from 'yargs';
+import { hideBin } from 'yargs/helpers'
 
-//Develop mode
-export const develop = (cb) => {
-    global.dev = true;
-    cb();
-}
+const argv = yargs(hideBin(process.argv)).argv;
+global.mode = argv.mode;
 
-export default gulp.parallel(develop, serve, watch, pug, style, scripts, iconSprite, vendorsJs);
+export default gulp.series(
+    clean,
+    gulp.parallel(
+        copyFonts,
+        copyComponentsJS,
+        copyMedia,
+        imgToWebp,
+        pug,
+        style,
+        scripts,
+        iconSprite
+    ),
+    serve,
+    watch
+);

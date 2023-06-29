@@ -1,0 +1,20 @@
+.main-header {
+	padding: 10px 0;
+	color: #fff;
+	background-color: #323232;
+
+	&__wrap {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	&__logo {
+		color: inherit;
+	}
+
+	&__phone {
+		color: inherit;
+	}
+
+}
