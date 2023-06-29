@@ -7,7 +7,7 @@ import cheerio from 'gulp-cheerio';
 import svgSprite from 'gulp-svg-sprite';
 
 export const iconSprite = (done) => {
-    gulp.src('app/img/svg-icons/*.svg')
+    gulp.src('app/img/icons-svg/*.svg')
         .pipe(svgMin({
             js2svg: {
                 pretty: true
@@ -38,6 +38,6 @@ export const iconSprite = (done) => {
                 }
             }
         }))
-        .pipe(gulp.dest('app/img/svg-sprite/'));
+        .pipe(gulp.dest('build/img/svg-sprite/'));
     done();
 }

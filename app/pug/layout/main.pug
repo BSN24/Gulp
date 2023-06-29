@@ -6,7 +6,6 @@ block var
 doctype html
 
 html(lang="ru").page
-  
     head
         meta(charset="UTF-8")
         title= title
@@ -19,23 +18,16 @@ html(lang="ru").page
         meta(name='format-detection', content='address=no')
         meta(name='format-detection', content='email=no')
         link(rel="stylesheet" href="css/style.min.css")
-  
     body
-
         .page__wrapper
-            header.main-header
-                .main-header__wrap.container
+            include ../blocks/main-header
 
             main.page__content
                 block content
 
-            footer.page__footer.main-footer
-                .main-footer__wrap.container
-
+            include ../blocks/main-footer
 
         block modal
 
-        block script
-            script(src="js/vendors/jquery.min.js")
-            script(src="js/vendors.min.js")
-            script(src="js/main.js")
+
+        script(src="js/main.min.js")
