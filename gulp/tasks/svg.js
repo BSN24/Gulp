@@ -6,8 +6,8 @@ import replace from 'gulp-replace';
 import cheerio from 'gulp-cheerio';
 import svgSprite from 'gulp-svg-sprite';
 
-export const iconSprite = (done) => {
-    gulp.src('app/img/icons-svg/*.svg')
+export const iconSprite = () => {
+    return gulp.src('./app/img/src/icons-svg/*.svg')
         .pipe(svgMin({
             js2svg: {
                 pretty: true
@@ -25,8 +25,8 @@ export const iconSprite = (done) => {
         .pipe(svgSprite({
             shape: {
                 dimension: {
-                    maxWidth: 200,
-                    maxHeight: 200
+                    maxWidth: 100,
+                    maxHeight: 100
                 },
                 spacing: {
                     padding: 0
@@ -38,6 +38,5 @@ export const iconSprite = (done) => {
                 }
             }
         }))
-        .pipe(gulp.dest('build/img/svg-sprite/'));
-    done();
+        .pipe(gulp.dest('./app/img/dist/svg-sprite/'));
 }

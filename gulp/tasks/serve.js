@@ -2,10 +2,9 @@
 
 import browserSync from "browser-sync";
 
-export const serve = (done) => {
-    browserSync.init({
+export const serve = () => {
+    return browserSync.init({
         ui: false,
-        server: './build'
+        server: './app/'
     });
-    done();
 }

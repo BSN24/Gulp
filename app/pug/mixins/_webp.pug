@@ -1,0 +1,4 @@
+mixin webp(src, srcWebp, className, alt)
+    picture
+        source(srcset=`img/dist/${srcWebp}.webp` type="image/webp")
+        img(src=`img/dist/${src}` class=className alt=alt)

@@ -46,32 +46,6 @@ export const scripts = (done) => {
             })
         }))
         .pipe(webpackStream(config))
-        .pipe(gulp.dest('./build/js/'))
+        .pipe(gulp.dest('./app/js/'))
         .pipe(browserSync.stream());
 }
-
-// export const scripts = (done) => {
-//     gulp.src('./app/js/main.js')
-//         .pipe(babel({
-//             presets: ['@babel/env']
-//         }))
-//         .pipe(uglify({
-//             annotations: false,
-//             keep_fnames: true,
-//             mangle: false
-//         }))
-//         .pipe(rename({
-//             suffix: '.min'
-//         }))
-//         .pipe(gulp.dest('./app/js/'))
-//         .pipe(browserSync.reload({stream: true}));
-//     done();
-// }
-
-// export const vendorsJs = (done) => {
-//     gulp.src(['./app/js/vendors/*.js', '!./app/js/vendors/jquery.min.js'])
-//         .pipe(concat('vendors.js',{newLine: ';'}))
-//         .pipe(gulp.dest('./app/js'))
-//         .pipe(browserSync.reload({stream: true}));
-//     done();
-// }

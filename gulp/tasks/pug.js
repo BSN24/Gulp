@@ -33,6 +33,6 @@ export const pug = () => {
             end_with_newline: true,
             extra_liners: ['section', 'header', 'main', 'footer'],
         })))
-        .pipe(gulp.dest('./build/'))
+        .pipe(gulp.dest('./app/'))
         .pipe(browserSync.stream());
 }
