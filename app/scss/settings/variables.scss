@@ -10,5 +10,9 @@ $phone: 576px;
 	--font-size-base: 16px;
 	--line-height-base: 1.5;
 	--color-text-base: #000;
-	--colo-bg-base: #fff;
+	--color-bg-base: #fff;
 }
+
+//Colors
+$color-text-base: var(--color-text-base);
+$color-bg-base: var(--color-bg-base);

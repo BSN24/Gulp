@@ -2,10 +2,10 @@
 @import "settings/settings";
 
 //Settings
-@import "ui/ui";
+@import "ui/*";
 
 //All-blocks
-@import "blocks/_all-blocks";
+@import "blocks/*";
 
 //Libs
 @import "lib/libs";

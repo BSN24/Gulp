@@ -9,8 +9,7 @@ html(lang="ru").page
     head
         meta(charset="UTF-8")
         title= title
-        meta(name="viewport" content="width=device-width, initial-scale=1.0")
-        meta(http-equiv="X-UA-Compatible" content="ie=edge")
+        meta(name="viewport" content="width=device-width, initial-scale=1")
         meta(name="description" content="")
         meta(name="keywords" content="")
         meta(name='format-detection', content='telephone=no')
@@ -18,16 +17,17 @@ html(lang="ru").page
         meta(name='format-detection', content='address=no')
         meta(name='format-detection', content='email=no')
         link(rel="stylesheet" href="css/style.min.css")
-    body
-        .page__wrapper
-            include ../blocks/main-header
 
-            main.page__content
-                block content
+    body.page__body.layout
+        include ../blocks/main-header/main-header
 
-            include ../blocks/main-footer
+        main
+            block content
+
+        include ../blocks/main-footer/main-footer
 
         block modal
+            include ../blocks/modals/modal
 
 
         script(src="js/main.min.js")
