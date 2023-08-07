@@ -9,8 +9,8 @@ import plumber from 'gulp-plumber';
 import browserSync from 'browser-sync';
 import formatHTML from 'gulp-format-html';
 
-export const pug = () => {
-    return gulp.src('./app/pug/page/*.pug')
+export const pug = (done) => {
+    gulp.src('./app/pug/page/*.pug')
         .pipe(plumber({
             errorHandler: notify.onError(function(error) {
                 return {
@@ -35,4 +35,5 @@ export const pug = () => {
         })))
         .pipe(gulp.dest('./app/'))
         .pipe(browserSync.stream());
+    done();
 }
