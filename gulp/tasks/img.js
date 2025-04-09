@@ -2,14 +2,14 @@
 
 import gulp from 'gulp';
 import webp from 'gulp-webp';
-import newer from 'gulp-newer';
+import changed from 'gulp-changed';
 import debug from 'gulp-debug';
 import imagemin, {gifsicle, mozjpeg, optipng, svgo} from 'gulp-imagemin';
 import browserSync from 'browser-sync';
 
 export const imgToWebp = () => {
     return gulp.src('./app/img/src/**/*.{png,jpg}')
-        .pipe(newer('./app/img/dist/'))
+        .pipe(changed('./app/img/dist/'))
         .pipe(debug({
             title: 'CONVERT TO WEBP'
         }))
@@ -24,7 +24,7 @@ export const imgToWebp = () => {
 
 export const imageMin = () => {
     return gulp.src(['./app/img/src/**/*.{jpg,png,svg}', '!./app/img/src/icons-svg/*.svg'])
-        .pipe(newer('./app/img/dist/'))
+        .pipe(changed('./app/img/dist/'))
         .pipe(debug({
             title: 'IMAGEMIN'
         }))

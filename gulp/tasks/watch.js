@@ -6,7 +6,6 @@ import {scripts} from "./scripts.js";
 import browserSync from "browser-sync";
 import {imgToWebp, imageMin} from "./img.js";
 
-
 export const watch = (done) => {
     gulp.watch('./app/pug/**/*.pug', pug);
 
@@ -16,7 +15,7 @@ export const watch = (done) => {
 
     //gulp.watch('./app/*.html').on('change', browserSync.reload);
 
-    gulp.watch('./app/img/src/*.{jpg,png}', imgToWebp);
+    gulp.watch('./app/img/src/**/*.{jpg,png}', imgToWebp);
 
     gulp.watch(['./app/img/src/**/*.svg', '!./app/img/src/icons-svg/*.svg'], imageMin).on('change', browserSync.reload);
 

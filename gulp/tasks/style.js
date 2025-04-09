@@ -17,7 +17,7 @@ import groupMedia from 'gulp-group-css-media-queries';
 const sass = gulpSass(dartSass);
 
 export const style = (done) => {
-    gulp.src('./app/scss/style.scss')
+    gulp.src('./app/scss/*.scss')
         .pipe(plumber({
             errorHandler: notify.onError(function(error) {
                 return {
@@ -29,14 +29,14 @@ export const style = (done) => {
         .pipe(bulkSass())
         .pipe(sass.sync())
         .pipe(groupMedia())
-        .pipe(gulpIf(mode === 'production', autoprefixer({
+        .pipe(gulpIf(mode !== 'development', autoprefixer({
             cascade: false,
             grid: true
         })))
-        .pipe(gulpIf(mode === 'production', cssComb('./node_modules/csscomb/config/zen.json')))
+        .pipe(gulpIf(mode !== 'development', cssComb('./node_modules/csscomb/config/zen.json')))
         .pipe(gulp.dest('./app/css'))
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulpIf(mode === 'production', csso()))
+        .pipe(gulpIf(mode !== 'development', csso()))
         .pipe(gulp.dest('./app/css'))
         .pipe(browserSync.stream());
     done();

@@ -26,3 +26,19 @@ export const copyComponentsJS = () => {
     return gulp.src('./app/js/components/*.js', {since: gulp.lastRun(copyComponentsJS)})
         .pipe(gulp.dest('./build/js/components/'));
 }
+
+export const copyToThemeStyle = () => {
+    return gulp.src('./app/css/*.css')
+        .pipe(debug({
+            title: 'Copy styles'
+        }))
+        .pipe(gulp.dest('./theme/assets/css/'));
+}
+
+export const copyToThemeScripts = () => {
+    return gulp.src('./app/js/*.js')
+        .pipe(debug({
+            title: 'Copy scripts'
+        }))
+        .pipe(gulp.dest('./theme/assets/js/'));
+}
